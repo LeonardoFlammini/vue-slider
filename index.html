@@ -25,7 +25,7 @@
         <img :src="photos[counter]" alt="photo">
       </div>
       <div class="thumb-nail-lf d-flex flex-wrap debug">
-        <div @click="(fanextPrevlse)" class="arrow-lf up-lf">
+        <div @click="nextPrev(false)" class="arrow-lf up-lf">
           <i class="fa-solid fa-chevron-up"></i>
         </div>
         <div @click="nextPrev(true)" class="arrow-lf bottom-lf">

@@ -10,7 +10,9 @@ createApp({
         "img/04.webp",
         "img/05.webp",
       ],
-      counter: 0
+      counter: 0,
+      autoPlayEl: null
+
     }
   },
     methods: {
@@ -20,14 +22,24 @@ createApp({
         }else if(!isNext){
           this.counter--;
         }
-
         if(this.counter > (this.photos.length - 1)){
           this.counter = 0;
         }else if ( this.counter < 0 ){
           this.counter = (this.photos.length - 1);
         }
         
+      },
+      autoPlay(){
+        autoPlayEl = setInterval( ()=> {
+          this.counter++;
+          if(this.counter > (this.photos.length - 1)){
+            this.counter = 0;
+          }
+        },3000)
       }
+    },
+    mounted(){
+      autoPlay();
     }
     
   
