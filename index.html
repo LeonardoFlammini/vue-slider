@@ -9,7 +9,7 @@
 
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
-
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
   <link rel="stylesheet" href="css/style.css">
 
@@ -17,19 +17,25 @@
 </head>
 <body>
   
-  <div class="container-c bg-light-lf">
+  <div class="container-c bg-light-lf" id="app">
     <div class="carousel-lf d-flex debug">
-      <div class="arrow-lf up-lf">
-        <i class="fa-solid fa-chevron-up"></i>
-      </div>
-      <div class="arrow-lf bottom-lf">
-        <i class="fa-solid fa-chevron-down"></i>
-      </div>
+    
       <div class="images-lf debug"> 
+      <!-- CONTAINER IMMAGINI-->
+        <img :src="photos[counter]" alt="photo">
       </div>
       <div class="thumb-nail-lf d-flex flex-wrap debug">
-        <div class="img-card-lf debug">
-          <img src="img/01.webp" alt="01">
+        <div @click="(fanextPrevlse)" class="arrow-lf up-lf">
+          <i class="fa-solid fa-chevron-up"></i>
+        </div>
+        <div @click="nextPrev(true)" class="arrow-lf bottom-lf">
+          <i class="fa-solid fa-chevron-down"></i>
+        </div>
+        <div
+          v-for="(photo,index) in photos"
+          class="img-card-lf debug"
+          :class="[{'active-lf': index  === counter}]">
+          <img :src="photo" :alt="photo">
         </div>
         
       </div>
