@@ -22,12 +22,15 @@ body {
 }
 
 .carousel-lf{
-  position: relative;
   width: 60%;
   height: 60%;
   max-width: 700px;
   max-height: 450px;
 }
+/* 
+.carousel-lf:hover{
+  border: 2px solid red;
+} */
 
 .arrow-lf{
   position: absolute;
