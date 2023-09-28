@@ -30,7 +30,7 @@ createApp({
         
       },
       autoPlay(){
-        autoPlayEl = setInterval( ()=> {
+        this.autoPlayEl = setInterval( ()=> {
           this.counter++;
           if(this.counter > (this.photos.length - 1)){
             this.counter = 0;
@@ -39,7 +39,7 @@ createApp({
       }
     },
     mounted(){
-      autoPlay();
+      this.autoPlay();
     }
     
   
