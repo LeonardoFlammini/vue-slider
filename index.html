@@ -18,7 +18,14 @@
 <body>
   
   <div class="container-c bg-light-lf" id="app">
-    <div class="carousel-lf d-flex debug">
+    <div
+      class="carousel-lf d-flex debug"
+      @mouseenter
+      =
+      "stopPlay"
+      @mouseout
+      =
+      "autoPlay">
     
       <div class="images-lf debug"> 
       <!-- CONTAINER IMMAGINI-->

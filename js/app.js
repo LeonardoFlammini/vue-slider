@@ -36,6 +36,9 @@ createApp({
             this.counter = 0;
           }
         },3000)
+      },
+      stopPlay(){
+        clearInterval(this.autoPlayEl);
       }
     },
     mounted(){
