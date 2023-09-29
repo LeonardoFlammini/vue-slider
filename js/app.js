@@ -17,11 +17,8 @@ createApp({
   },
     methods: {
       nextPrev(isNext) {
-        if(isNext){
-          this.counter++;
-        }else if(!isNext){
-          this.counter--;
-        }
+        isNext ? this.counter++ : this.counter--;
+
         if(this.counter > (this.photos.length - 1)){
           this.counter = 0;
         }else if ( this.counter < 0 ){
