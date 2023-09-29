@@ -32,15 +32,16 @@
         <img :src="photos[counter]" alt="photo">
       </div>
       <div class="thumb-nail-lf d-flex flex-wrap debug">
-        <div @click="nextPrev(false)" class="arrow-lf up-lf">
+        <div @click.stop="nextPrev(false)" class="arrow-lf up-lf">
           <i class="fa-solid fa-chevron-up"></i>
         </div>
-        <div @click="nextPrev(true)" class="arrow-lf bottom-lf">
+        <div @click.stop="nextPrev(true)" class="arrow-lf bottom-lf">
           <i class="fa-solid fa-chevron-down"></i>
         </div>
         <div
           v-for="(photo,index) in photos"
           class="img-card-lf debug"
+          @click="counter = index"
           :class="[{'active-lf': index  === counter}]">
           <img :src="photo" :alt="photo">
         </div>
